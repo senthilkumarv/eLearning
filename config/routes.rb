@@ -1,4 +1,6 @@
 ELearning::Application.routes.draw do
+  get "favorites/new"
+
   get "users/new"
 
   get "ratings/new"
