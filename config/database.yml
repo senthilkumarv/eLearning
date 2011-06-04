@@ -9,11 +9,11 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: eLearning_development
+  database: railsdev
   pool: 5
-  username: root
-  password:
-  host: localhost
+  username: senthil
+  password: $3nth!1
+  host: 192.168.124.11
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
