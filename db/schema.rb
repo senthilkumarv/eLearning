@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20110604142710) do
     t.string   "poster"
     t.text     "detail"
     t.text     "url"
+    t.integer  "hitcount"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

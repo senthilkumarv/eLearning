@@ -1,13 +1,18 @@
 ELearning::Application.routes.draw do
-  get "favorites/new"
+  resources :categories
+  resources :topics
+  resources :users
+  resources :ratings
+  resources :favorites
+  #get "favorites/new"
 
-  get "users/new"
+  #get "users/new"
 
-  get "ratings/new"
+  #get "ratings/new"
 
-  get "topics/new"
+  #get "topics/new"
 
-  get "categories/new"
+  #get "categories/new"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -5,7 +5,7 @@ class CreateTopics < ActiveRecord::Migration
       t.string :poster
       t.text :detail
       t.text :url
-
+      t.integer :hitcount
       t.timestamps
     end
   end
