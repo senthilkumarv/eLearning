@@ -6,6 +6,7 @@ class CreateTopics < ActiveRecord::Migration
       t.text :detail
       t.text :url
       t.integer :hitcount
+      t.integer :category_id
       t.timestamps
     end
   end

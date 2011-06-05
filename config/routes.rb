@@ -1,9 +1,10 @@
 ELearning::Application.routes.draw do
   resources :categories
   resources :topics
-  resources :users
   resources :ratings
   resources :favorites
+  post "users/favorite"
+  post "users/login"
   #get "favorites/new"
 
   #get "users/new"

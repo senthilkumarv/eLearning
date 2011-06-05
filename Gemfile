@@ -6,7 +6,8 @@ gem 'rails', '3.0.7'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-
+gem "httpclient"
+gem 'soap4r'
 # Use unicorn as the web server
 # gem 'unicorn'
 

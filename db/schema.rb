@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110604142710) do
+ActiveRecord::Schema.define(:version => 20110605063233) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(:version => 20110604142710) do
   end
 
   create_table "favorites", :force => true do |t|
+    t.integer  "topic_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -27,6 +29,8 @@ ActiveRecord::Schema.define(:version => 20110604142710) do
   create_table "ratings", :force => true do |t|
     t.integer  "value"
     t.text     "comment"
+    t.integer  "topic_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -37,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20110604142710) do
     t.text     "detail"
     t.text     "url"
     t.integer  "hitcount"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

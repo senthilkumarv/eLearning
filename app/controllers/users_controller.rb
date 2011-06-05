@@ -1,3 +1,6 @@
+require 'http-access2'
+require 'soap/wsdlDriver'
+
 class UsersController < ApplicationController
   def new
   end
@@ -15,5 +18,12 @@ class UsersController < ApplicationController
     end
   end
   
-  
+  def favorite
+    fav = Favorite.new(params[:favorite])
+    fav.save
+    data = { :status => 200, :data => "Favorite Added Successfully"}
+    respond_to do |format|
+      format.json  { render :json => data }
+    end
+  end
 end
