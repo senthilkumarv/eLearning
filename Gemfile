@@ -10,7 +10,7 @@ gem "httpclient"
 gem 'soap4r'
 # Use unicorn as the web server
 # gem 'unicorn'
-
+gem 'ruby-debug'
 # Deploy with Capistrano
 # gem 'capistrano'
 

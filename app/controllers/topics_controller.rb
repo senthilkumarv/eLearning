@@ -1,20 +1,21 @@
 class TopicsController < ApplicationController
   include TopicsHelper
-  respond_to :json
+
   def new
   end
 
   def index
     data = data_as_json
-    respond_with(data)
+    respond_to do |format|
+      format.json  { render :json => data, :except => [:details, :url] }
+    end
   end
 
   def show
-    @topic = Topic.find(params[:id])
-
+    topic = Topic.find(params[:id])
+    data = {:status => 200, :data => topic_to_json(topic)}
     respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @topic }
+      format.json  { render :json => data  }
     end
   end
   
