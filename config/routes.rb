@@ -1,10 +1,12 @@
 ELearning::Application.routes.draw do
   resources :categories
   resources :topics
-  resources :ratings
+  #resources :ratings
   resources :favorites
-  post "users/favorite"
   post "users/login"
+  post "users/favorite"
+  post "ratings/rate"
+  #get "topics/hit"
   #get "favorites/new"
 
   #get "users/new"
@@ -23,7 +25,8 @@ ELearning::Application.routes.draw do
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+  match 'topics/:id/hit' => 'topics#hit', :as => :hit
+  #  match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):

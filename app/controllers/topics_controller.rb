@@ -1,7 +1,22 @@
 class TopicsController < ApplicationController
   include TopicsHelper
 
-  def new
+  def hit
+    data = nil
+    print "Inside Hit"
+    begin
+      t = Topic.find(params[:id])
+      t.hitcount = t.hitcount + 1
+      t.save
+      data = {:status => 200, :data => {:hits => t.hitcount}}
+      print "Hit Saved Data"
+    rescue => err
+      data = {:status => 500, :data => nil}
+      print "Save Failed #{err.message}"
+    end  
+    respond_to do |format|
+      format.json  { render :json => data }
+    end
   end
 
   def index
@@ -28,11 +43,8 @@ class TopicsController < ApplicationController
     end
   end
 
-  # GET /blogs/1/edit
-  def edit
-    @topic = Topic.find(params[:id])
-  end
 
+  
   # POST /blogs
   # POST /blogs.xml
   def create
