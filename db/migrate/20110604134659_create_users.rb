@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :name
       t.timestamp :lastvisit
-
+      
       t.timestamps
     end
   end
